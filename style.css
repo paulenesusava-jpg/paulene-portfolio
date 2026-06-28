@@ -1481,4 +1481,8 @@ padding:20px;
 
     flex-shrink:0;
 
+}.gallery-thumb.active{
+
+    border-color:#2563eb;
+
 }

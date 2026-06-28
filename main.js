@@ -34,7 +34,6 @@ function initializeCaseStudyModal() {
         if (!project) return;
 
         renderCaseStudy(project);
-
         modal.classList.remove("hidden");
 
         document.body.style.overflow = "hidden";
@@ -81,7 +80,23 @@ function initializeCaseStudyModal() {
 
             openCaseStudy(card.dataset.project);
 
-        }
+        }const thumbnail = event.target.closest(".gallery-thumb");
+
+if (thumbnail) {
+
+    const mainImage = document.getElementById("gallery-main-image");
+
+    if (!mainImage) return;
+
+    mainImage.src = thumbnail.src;
+
+    document
+        .querySelectorAll(".gallery-thumb")
+        .forEach(image => image.classList.remove("active"));
+
+    thumbnail.classList.add("active");
+
+}
 
     });
 
