@@ -353,7 +353,246 @@ function renderCapabilities() {
 `;
 
 }
+/* ==========================================
+   PROFESSIONAL DEVELOPMENT
+========================================== */
 
+function renderProfessionalDevelopment() {
+
+    const section = document.getElementById("professional-development");
+
+    if (!section) return;
+
+    section.innerHTML = `
+
+<section class="container">
+
+    <div class="section-header">
+
+        <p class="eyebrow">
+
+            CONTINUOUS PROFESSIONAL DEVELOPMENT
+
+        </p>
+
+        <h2 class="section-title">
+
+            Committed to Continuous Learning
+
+        </h2>
+
+        <p class="section-description">
+
+            I continuously invest in developing industry-specific knowledge to
+            better support real estate professionals through organized
+            operations, efficient systems, and modern technology.
+
+        </p>
+
+    </div>
+
+    <div class="professional-development-grid">
+
+        <!-- Professional Training -->
+
+        <article class="pd-card training-card">
+
+            <div class="pd-card-header">
+
+                <div class="pd-icon">
+
+                    🏆
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Professional Training
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="pd-card-body">
+
+                <h4 class="pd-training-title">
+
+                    Sync2VA<br>
+                    US Real Estate Online Masterclass
+
+                </h4>
+
+                <p class="pd-training-meta">
+
+                    40-Hour Intensive • 4-Week Training Program
+
+                </p>
+
+                <p class="pd-training-description">
+
+                    Successfully completed structured training focused on
+                    U.S. real estate operations, transaction coordination,
+                    property management and administrative support through
+                    practical exercises and real-world workflows.
+
+                </p>
+
+                <div class="pd-competencies">
+
+                    <p class="pd-competencies-title">
+
+                        Key Competencies
+
+                    </p>
+
+                    <ul>
+
+                        <li>Transaction Coordination</li>
+
+                        <li>Listing Coordination</li>
+
+                        <li>Comparative Market Analysis</li>
+
+                        <li>Property Management</li>
+
+                        <li>Tenant Screening</li>
+
+                        <li>Trust Accounting</li>
+
+                        <li>Administrative Support</li>
+
+                        <li>Real Estate Content Creation</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="pd-card-footer">
+
+                <button
+    id="view-training-certificates"
+    class="btn btn-outline">
+
+    View Training Certificates
+
+</button>
+
+            </div>
+
+        </article>
+
+        <!-- Currently Learning -->
+
+        <article class="pd-card learning-card">
+
+            <div class="pd-card-header">
+
+                <div class="pd-icon">
+
+                    📚
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Currently Learning
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="pd-card-body">
+
+                <div class="learning-badges">
+
+                    <span class="tag">Buildium</span>
+
+                    <span class="tag">Follow Up Boss</span>
+
+                    <span class="tag">MLS</span>
+
+                    <span class="tag">Google Workspace</span>
+
+                    <span class="tag">Canva</span>
+
+                    <span class="tag">AI Tools</span>
+
+                    <span class="tag">Automation</span>
+
+                </div>
+
+                <p class="pd-learning-note">
+
+                    Continuously expanding my knowledge of real estate
+                    operations, modern software, and automation tools to
+                    provide more efficient and reliable support.
+
+                </p>
+
+            </div>
+
+        </article>
+
+        <!-- Professional Philosophy -->
+
+        <article class="pd-card philosophy-card">
+
+            <div class="pd-card-header">
+
+                <div class="pd-icon">
+
+                    💡
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Professional Philosophy
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="pd-card-body">
+
+                <blockquote>
+
+                    I believe exceptional real estate operations are built
+                    through continuous learning, organized systems, and
+                    reliable execution.
+
+                    <br><br>
+
+                    Every new skill I develop helps me provide greater value
+                    to the professionals and clients I support.
+
+                </blockquote>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+`;
+
+}
 /* ==========================================
    CASE STUDY
 ========================================== */

@@ -1499,4 +1499,378 @@ padding:20px;
 
     margin-top:3rem;
 
+}/* ==================================================
+   RESPONSIVE - CAPABILITIES
+================================================== */
+
+/* Large Desktop */
+
+@media (min-width: 1200px){
+
+    .capabilities-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width:991px){
+
+    .capabilities-grid{
+
+        grid-template-columns:1fr;
+
+        gap:1.5rem;
+
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .capability-card{
+
+        padding:1.5rem;
+
+    }
+
+    .capability-card h3{
+
+        font-size:1.2rem;
+
+    }
+
+    .capability-card p{
+
+        font-size:.95rem;
+
+    }
+
+    .capability-card li{
+
+        font-size:.92rem;
+
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+    .capabilities-grid{
+
+        gap:1rem;
+
+    }
+
+    .capability-card{
+
+        padding:1.25rem;
+
+    }
+
+}
+/* ==================================================
+   PROFESSIONAL DEVELOPMENT
+================================================== */
+
+.professional-development-grid{
+
+    display:grid;
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+.pd-card{
+
+    background:#fff;
+
+    border:1px solid #e7e2db;
+
+    border-radius:20px;
+
+    padding:2rem;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.05);
+
+    transition:.3s ease;
+
+}
+
+.pd-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 16px 40px rgba(0,0,0,.08);
+
+}
+
+.pd-card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.pd-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#f6f1e9;
+
+    font-size:1.6rem;
+
+}
+
+.pd-card-header h3{
+
+    margin:0;
+
+    font-size:1.35rem;
+
+    color:#222;
+
+}
+
+.pd-training-title{
+
+    margin-bottom:.5rem;
+
+    line-height:1.45;
+
+    color:#222;
+
+}
+
+.pd-training-meta{
+
+    color:#b88a3b;
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+.pd-training-description{
+
+    margin-bottom:1.5rem;
+
+    line-height:1.8;
+
+}
+
+.pd-competencies-title{
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+    color:#222;
+
+}
+
+.pd-competencies ul{
+
+    margin:0;
+
+    padding-left:1.2rem;
+
+}
+
+.pd-competencies li{
+
+    margin-bottom:.7rem;
+
+    line-height:1.6;
+
+}
+
+.pd-card-footer{
+
+    margin-top:2rem;
+
+}
+
+.learning-card .learning-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.pd-learning-note{
+
+    line-height:1.8;
+
+}
+
+.philosophy-card blockquote{
+
+    margin:0;
+
+    padding-left:1.5rem;
+
+    border-left:4px solid #b88a3b;
+
+    font-style:italic;
+
+    line-height:2;
+
+    color:#444;
+
+}
+
+.professional-development-grid .tag{
+
+    background:#faf8f5;
+
+    border:1px solid #e7e2db;
+
+    border-radius:999px;
+
+    padding:.65rem 1rem;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (min-width:992px){
+
+    .professional-development-grid{
+
+        grid-template-columns:2fr 1fr;
+
+        align-items:start;
+
+    }
+
+    .training-card{
+
+        grid-row:span 2;
+
+    }
+
+}
+
+@media (max-width:991px){
+
+    .professional-development-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .pd-card{
+
+        padding:1.5rem;
+
+    }
+
+    .pd-card-header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .pd-icon{
+
+        margin-bottom:.5rem;
+
+    }
+
+    .pd-training-title{
+
+        font-size:1.2rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .pd-card{
+
+        padding:1.25rem;
+
+    }
+
+    .learning-card .learning-badges{
+
+        gap:.5rem;
+
+    }
+
+    .professional-development-grid .tag{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+/* ==================================================
+   CERTIFICATE GALLERY
+================================================== */
+
+.certificate-gallery{
+
+    display:grid;
+
+    gap:2rem;
+
+    margin-top:2rem;
+
+}
+
+.certificate-gallery img{
+
+    width:100%;
+
+    border-radius:16px;
+
+    border:1px solid #e7e2db;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
 }
