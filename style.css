@@ -1277,4 +1277,96 @@ padding:20px;
 
     font-size:2rem;
 
+}/* ==========================================
+   CASE STUDY MODAL
+========================================== */
+
+.case-modal{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.case-modal.hidden{
+    display:none;
+}
+
+.case-modal-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(15,20,30,.75);
+    backdrop-filter:blur(6px);
+}
+
+.case-modal-content{
+
+    position:relative;
+
+    width:min(1200px,92vw);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:50px;
+
+    z-index:2;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+
+    animation:modalIn .3s ease;
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    border:none;
+
+    background:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    color:#444;
+
+    transition:.2s;
+}
+
+.close-modal:hover{
+
+    transform:rotate(90deg);
+
+    color:var(--color-secondary);
+
+}
+
+@keyframes modalIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px) scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
 }
