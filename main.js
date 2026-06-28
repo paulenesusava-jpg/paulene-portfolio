@@ -9,6 +9,8 @@ function initializePortfolio() {
 
     renderFeaturedWork();
 
+    renderCapabilities();
+
     initializeCaseStudyModal();
 
 }
@@ -20,9 +22,7 @@ function initializePortfolio() {
 function initializeCaseStudyModal() {
 
     const modal = document.getElementById("case-study-modal");
-
     const closeButton = document.getElementById("close-modal");
-
     const overlay = document.querySelector(".case-modal-overlay");
 
     function openCaseStudy(projectId) {
@@ -34,9 +34,16 @@ function initializeCaseStudyModal() {
         if (!project) return;
 
         renderCaseStudy(project);
+
         modal.classList.remove("hidden");
 
         document.body.style.overflow = "hidden";
+
+        const firstThumb = document.querySelector(".gallery-thumb");
+
+        if (firstThumb) {
+            firstThumb.classList.add("active");
+        }
 
     }
 
@@ -48,11 +55,9 @@ function initializeCaseStudyModal() {
 
     }
 
-    /* ==========================================
-       Featured Button
-    ========================================== */
-
     document.addEventListener("click", (event) => {
+
+        /* Featured button */
 
         const openButton = event.target.closest("#open-case-study");
 
@@ -64,6 +69,8 @@ function initializeCaseStudyModal() {
 
         }
 
+        /* Featured image */
+
         const featuredImage = event.target.closest("#featured-image");
 
         if (featuredImage) {
@@ -74,29 +81,39 @@ function initializeCaseStudyModal() {
 
         }
 
+        /* Project cards */
+
         const card = event.target.closest(".project-card");
 
         if (card) {
 
             openCaseStudy(card.dataset.project);
 
-        }const thumbnail = event.target.closest(".gallery-thumb");
+            return;
 
-if (thumbnail) {
+        }
 
-    const mainImage = document.getElementById("gallery-main-image");
+        /* Gallery thumbnails */
 
-    if (!mainImage) return;
+        const thumbnail = event.target.closest(".gallery-thumb");
 
-    mainImage.src = thumbnail.src;
+        if (thumbnail) {
 
-    document
-        .querySelectorAll(".gallery-thumb")
-        .forEach(image => image.classList.remove("active"));
+            const mainImage = document.getElementById("gallery-main-image");
 
-    thumbnail.classList.add("active");
+            if (!mainImage) return;
 
-}
+            mainImage.src = thumbnail.src;
+
+            document
+                .querySelectorAll(".gallery-thumb")
+                .forEach(image => image.classList.remove("active"));
+
+            thumbnail.classList.add("active");
+
+            return;
+
+        }
 
     });
 

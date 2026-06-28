@@ -1,9 +1,12 @@
 /* ==================================================
    COMPONENTS.JS
-   Renders all UI components from portfolio data
+   Portfolio Rendering Components
+   Version: v0.5.2
 ================================================== */
 
-/* ---------- Helpers ---------- */
+/* ==========================================
+   HELPERS
+========================================== */
 
 function createTags(items = []) {
 
@@ -13,7 +16,9 @@ function createTags(items = []) {
 
 }
 
-/* ---------- Featured Project ---------- */
+/* ==========================================
+   FEATURED WORK
+========================================== */
 
 function renderFeaturedWork() {
 
@@ -36,9 +41,7 @@ function renderFeaturedWork() {
         </p>
 
         <h2 class="section-title">
-
             Real Estate Operations in Practice
-
         </h2>
 
         <p class="section-description">
@@ -91,7 +94,11 @@ function renderFeaturedWork() {
 
             <div class="case-impact">
 
-                <h4>Outcome</h4>
+                <h4>
+
+                    Outcome
+
+                </h4>
 
                 <p>
 
@@ -143,7 +150,9 @@ function renderFeaturedWork() {
 
 }
 
-/* ---------- Project Cards ---------- */
+/* ==========================================
+   PROJECT GRID
+========================================== */
 
 function renderProjectGrid() {
 
@@ -193,7 +202,161 @@ function renderProjectGrid() {
 
 }
 
-/* ---------- Case Study ---------- */
+/* ==========================================
+   CAPABILITIES
+========================================== */
+
+function renderCapabilities() {
+
+    const section = document.getElementById("capabilities");
+
+    if (!section) return;
+
+    section.innerHTML = `
+
+<section class="container">
+
+    <div class="section-header">
+
+        <p class="eyebrow">
+
+            CAPABILITIES
+
+        </p>
+
+        <h2 class="section-title">
+
+            How I Support Real Estate Professionals
+
+        </h2>
+
+        <p class="section-description">
+
+            Practical operational support that helps
+            agents, brokers, investors and property
+            managers stay organized, responsive
+            and focused on growth.
+
+        </p>
+
+    </div>
+
+    <div class="capabilities-grid">
+
+        <article class="capability-card">
+
+            <h3>🏠 Property Research</h3>
+
+            <p>
+
+                Research-driven support that helps
+                identify investment opportunities
+                and evaluate market conditions.
+
+            </p>
+
+            <ul>
+
+                <li>Investment Property Research</li>
+
+                <li>Comparative Market Analysis</li>
+
+                <li>Zillow Research</li>
+
+                <li>Market Data Collection</li>
+
+            </ul>
+
+        </article>
+
+        <article class="capability-card">
+
+            <h3>📋 Transaction Coordination</h3>
+
+            <p>
+
+                Organized transaction support from
+                listing preparation through
+                buyer coordination.
+
+            </p>
+
+            <ul>
+
+                <li>Listing Coordination</li>
+
+                <li>Buyer Transaction Support</li>
+
+                <li>Timeline Tracking</li>
+
+                <li>Document Management</li>
+
+            </ul>
+
+        </article>
+                <article class="capability-card">
+
+            <h3>🏢 Property Management</h3>
+
+            <p>
+
+                Administrative support that keeps
+                rental operations organized
+                and efficient.
+
+            </p>
+
+            <ul>
+
+                <li>Tenant Screening</li>
+
+                <li>Property Accounting</li>
+
+                <li>Buildium</li>
+
+                <li>Record Management</li>
+
+            </ul>
+
+        </article>
+
+        <article class="capability-card">
+
+            <h3>🎨 Marketing & Administrative Support</h3>
+
+            <p>
+
+                Professional marketing materials
+                and administrative support
+                for real estate businesses.
+
+            </p>
+
+            <ul>
+
+                <li>Canva Marketing</li>
+
+                <li>Open House Materials</li>
+
+                <li>CRM Updates</li>
+
+                <li>Process Documentation</li>
+
+            </ul>
+
+        </article>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+/* ==========================================
+   CASE STUDY
+========================================== */
 
 function renderCaseStudy(project) {
 
@@ -225,27 +388,27 @@ function renderCaseStudy(project) {
 
     <div class="gallery-viewer">
 
-    <img
-        id="gallery-main-image"
-        class="case-study-image"
-        src="${project.gallery[0]}"
-        alt="${project.title}">
-
-</div>
-
-<div class="gallery-thumbnails">
-
-    ${project.gallery.map((image, index) => `
-
         <img
-            class="gallery-thumb"
-            data-index="${index}"
-            src="${image}"
-            alt="Gallery ${index + 1}">
+            id="gallery-main-image"
+            class="case-study-image"
+            src="${project.gallery[0]}"
+            alt="${project.title}">
 
-    `).join("")}
+    </div>
 
-</div>
+    <div class="gallery-thumbnails">
+
+        ${project.gallery.map((image, index) => `
+
+            <img
+                class="gallery-thumb"
+                data-index="${index}"
+                src="${image}"
+                alt="Gallery ${index + 1}">
+
+        `).join("")}
+
+    </div>
 
     <section class="case-section">
 

@@ -1485,4 +1485,18 @@ padding:20px;
 
     border-color:#2563eb;
 
+}/* ==========================================
+   CAPABILITIES
+========================================== */
+
+.capabilities-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+    margin-top:3rem;
+
 }

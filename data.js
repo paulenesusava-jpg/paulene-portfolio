@@ -1,3 +1,4 @@
+console.log("NEW DATA.JS LOADED");
 const portfolio = {
 
     profile: {
@@ -30,7 +31,73 @@ const portfolio = {
             id: "marketing",
             label: "Marketing"
         }
-    ],
+    ],capabilities: [
+
+    {
+        id: "property-research",
+
+        title: "Property Research",
+
+        description:
+            "Research-driven support that helps identify opportunities and evaluate properties with confidence.",
+
+        items: [
+            "Investment Property Research",
+            "Comparative Market Analysis",
+            "Zillow Research",
+            "Market Data Collection"
+        ]
+    },
+
+    {
+        id: "transaction-coordination",
+
+        title: "Transaction Coordination",
+
+        description:
+            "Organized transaction support that keeps buyers, listings, and documentation on track.",
+
+        items: [
+            "Listing Coordination",
+            "Buyer Transaction Support",
+            "Timeline Tracking",
+            "Document Management"
+        ]
+    },
+
+    {
+        id: "property-management",
+
+        title: "Property Management",
+
+        description:
+            "Administrative and operational support for efficient day-to-day property management.",
+
+        items: [
+            "Tenant Screening",
+            "Property Accounting",
+            "Buildium",
+            "Record Management"
+        ]
+    },
+
+    {
+        id: "marketing",
+
+        title: "Marketing & Administrative Support",
+
+        description:
+            "Professional marketing assets and administrative support that improve visibility and organization.",
+
+        items: [
+            "Canva Marketing",
+            "Open House Materials",
+            "CRM Updates",
+            "Process Documentation"
+        ]
+    }
+
+],
 
     featuredProject: "west-virginia",
 
@@ -327,4 +394,5 @@ const portfolio = {
 
     ]
 
-};
+};console.log("Capabilities:", portfolio.capabilities);
+console.log("Keys:", Object.keys(portfolio));
