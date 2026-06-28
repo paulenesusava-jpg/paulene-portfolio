@@ -4,8 +4,9 @@ function renderFeaturedWork() {
 
     if (!section) return;
 
-    const featured = projects.find(project => project.featured);
-    const others = projects.filter(project => !project.featured);
+const featured = portfolio.projects.find(project => project.featured);
+
+const others = portfolio.projects.filter(project => !project.featured);
 
     section.innerHTML = `
 
@@ -48,7 +49,7 @@ function renderFeaturedWork() {
 
             <span class="case-category">
 
-                ${featured.category}
+                ${featured.categoryLabel}
 
             </span>
 
@@ -60,7 +61,7 @@ function renderFeaturedWork() {
 
             <p>
 
-                ${featured.overview}
+                ${featured.summary}
 
             </p>
 
@@ -74,11 +75,9 @@ function renderFeaturedWork() {
 
                 <p>
 
-                    Organized and presented investment property research in a structured,
-                    client-ready format that simplified evaluation and supported
-                    informed decision-making.
+    ${featured.outcome}
 
-                </p>
+</p>
 
             </div>
 
@@ -126,7 +125,7 @@ function renderFeaturedWork() {
 
                         <span>
 
-                            ${project.category}
+                            ${project.categoryLabel}
 
                         </span>
 
