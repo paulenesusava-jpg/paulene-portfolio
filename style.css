@@ -56,7 +56,7 @@ ul{
     /* Colors */
 
     --color-primary:#0F2742;
-    --color-secondary:#B8945A;
+    --color-secondary:#B58A3A;
 
     --color-background:#FAF8F4;
     --color-surface:#FFFFFF;
@@ -373,7 +373,7 @@ section{
 
     font-family:var(--font-heading);
 
-    font-size:1.6rem;
+    font-size:1.35rem;
 
     color:var(--color-heading);
 
@@ -495,7 +495,10 @@ section{
 
 .hero{
 
-    padding-top:170px;
+    padding-top:190px;
+    padding-bottom:140px;
+
+}
 
 }
 
@@ -503,11 +506,13 @@ section{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:2.4fr .8fr;
 
-    gap:80px;
+    gap:110px;
 
     align-items:center;
+
+}
 
 }
 
@@ -527,9 +532,22 @@ section{
 
 }
 
-.hero h1{
+.hero-name{
 
-    margin-bottom:25px;
+    font-size:6rem;
+
+    line-height:.95;
+
+    letter-spacing:-2px;
+
+    color:var(--color-heading);
+
+    margin-bottom:32px;
+
+    max-width:900px;
+
+}
+}
 
 }
 
@@ -555,21 +573,29 @@ section{
 
 .hero-description{
 
-    font-size:1.05rem;
+    font-size:1.18rem;
 
-    max-width:620px;
+    line-height:1.9;
 
-    margin-bottom:40px;
+    max-width:720px;
+
+    margin-bottom:20px;
 
 }
 
-.hero-buttons{
+}
+
+..hero-buttons{
 
     display:flex;
 
-    gap:18px;
+    gap:20px;
 
     flex-wrap:wrap;
+
+    margin-top:55px;
+
+}
 
 }
 
@@ -605,7 +631,11 @@ section{
 
     color:var(--color-secondary);
 
-    margin-bottom:6px;
+    font-size:3.5rem;
+
+    margin-bottom:10px;
+
+}
 
 }
 
@@ -621,7 +651,7 @@ section{
 
 .hero-grid{
 
-grid-template-columns:1fr;
+grid-template-columns:2.3fr .7fr;
 
 }
 
