@@ -1,37 +1,51 @@
+/* ==================================================
+   COMPONENTS.JS
+   Renders all UI components from portfolio data
+================================================== */
+
+/* ---------- Helpers ---------- */
+
+function createTags(items = []) {
+
+    return items.map(item =>
+        `<span class="tag">${item}</span>`
+    ).join("");
+
+}
+
+/* ---------- Featured Project ---------- */
+
 function renderFeaturedWork() {
 
     const section = document.getElementById("featured-work");
 
     if (!section) return;
 
-const featured = portfolio.projects.find(project => project.featured);
-
-const others = portfolio.projects.filter(project => !project.featured);
+    const featured = portfolio.projects.find(
+        project => project.featured
+    );
 
     section.innerHTML = `
 
-<div class="container">
+<section class="container">
 
     <div class="section-header">
 
-        <p class="section-number">
-            01
-        </p>
-
         <p class="eyebrow">
-            SELECTED CASE STUDIES
+            FEATURED WORK
         </p>
 
         <h2 class="section-title">
-            Real Projects. Real Results.
+
+            Real Estate Operations in Practice
+
         </h2>
 
         <p class="section-description">
 
-            A curated collection of client-ready deliverables demonstrating my
-            experience supporting real estate professionals through organized
-            operations, transaction coordination, property research,
-            listing management and marketing support.
+            A curated selection of client-ready deliverables demonstrating
+            property research, transaction coordination,
+            property management and marketing support.
 
         </p>
 
@@ -39,9 +53,13 @@ const others = portfolio.projects.filter(project => !project.featured);
 
     <div class="featured-case">
 
-        <div class="featured-image">
+        <div
+            id="featured-image"
+            class="featured-image">
 
-            <img src="${featured.image}" alt="${featured.title}">
+            <img
+                src="${featured.image}"
+                alt="${featured.title}">
 
         </div>
 
@@ -59,6 +77,12 @@ const others = portfolio.projects.filter(project => !project.featured);
 
             </h3>
 
+            <p class="case-subtitle">
+
+                ${featured.subtitle}
+
+            </p>
+
             <p>
 
                 ${featured.summary}
@@ -67,29 +91,25 @@ const others = portfolio.projects.filter(project => !project.featured);
 
             <div class="case-impact">
 
-                <h4>
-
-                    Client Value Delivered
-
-                </h4>
+                <h4>Outcome</h4>
 
                 <p>
 
-    ${featured.outcome}
+                    ${featured.outcome}
 
-</p>
+                </p>
 
             </div>
 
             <div class="tool-tags">
 
-                ${featured.tools.map(tool => `
-                    <span>${tool}</span>
-                `).join("")}
+                ${createTags(featured.tools)}
 
             </div>
 
-            <button class="btn btn-primary">
+            <button
+                id="open-case-study"
+                class="btn btn-primary">
 
                 Explore Case Study →
 
@@ -99,51 +119,213 @@ const others = portfolio.projects.filter(project => !project.featured);
 
     </div>
 
-    <div class="other-projects">
+    <div class="section-header small">
 
-        <div class="section-header small">
+        <h3>
 
-            <p class="section-number">
-                02
-            </p>
+            More Projects
 
-            <h3>
-                Other Case Studies
-            </h3>
-
-        </div>
-
-        <div class="project-grid">
-
-            ${others.map(project => `
-
-                <article class="project-card">
-
-                    <img src="${project.image}" alt="${project.title}">
-
-                    <div class="project-info">
-
-                        <span>
-
-                            ${project.categoryLabel}
-
-                        </span>
-
-                        <h4>
-
-                            ${project.title}
-
-                        </h4>
-
-                    </div>
-
-                </article>
-
-            `).join("")}
-
-        </div>
+        </h3>
 
     </div>
+
+    <div
+        id="project-grid"
+        class="project-grid">
+
+    </div>
+
+</section>
+
+`;
+
+    renderProjectGrid();
+
+}
+
+/* ---------- Project Cards ---------- */
+
+function renderProjectGrid() {
+
+    const grid = document.getElementById("project-grid");
+
+    if (!grid) return;
+
+    const projects = portfolio.projects.filter(
+        project => !project.featured
+    );
+
+    grid.innerHTML = projects.map(project => `
+
+<article
+    class="project-card"
+    data-project="${project.id}">
+
+    <img
+        src="${project.image}"
+        alt="${project.title}">
+
+    <div class="project-info">
+
+        <span>
+
+            ${project.categoryLabel}
+
+        </span>
+
+        <h4>
+
+            ${project.title}
+
+        </h4>
+
+        <p>
+
+            ${project.subtitle}
+
+        </p>
+
+    </div>
+
+</article>
+
+`).join("");
+
+}
+
+/* ---------- Case Study ---------- */
+
+function renderCaseStudy(project) {
+
+    const body = document.getElementById("modal-body");
+
+    if (!body) return;
+
+    body.innerHTML = `
+
+<div class="case-study">
+
+    <p class="eyebrow">
+
+        FEATURED CASE STUDY
+
+    </p>
+
+    <h2>
+
+        ${project.title}
+
+    </h2>
+
+    <p class="case-subtitle">
+
+        ${project.subtitle}
+
+    </p>
+
+    <div class="gallery-viewer">
+
+    <img
+        id="gallery-main-image"
+        class="case-study-image"
+        src="${project.gallery[0]}"
+        alt="${project.title}">
+
+</div>
+
+<div class="gallery-thumbnails">
+
+    ${project.gallery.map((image, index) => `
+
+        <img
+            class="gallery-thumb"
+            data-index="${index}"
+            src="${image}"
+            alt="Gallery ${index + 1}">
+
+    `).join("")}
+
+</div>
+
+    <section class="case-section">
+
+        <h3>
+
+            Outcome
+
+        </h3>
+
+        <p>
+
+            ${project.outcome}
+
+        </p>
+
+    </section>
+
+    <section class="case-section">
+
+        <h3>
+
+            Deliverable
+
+        </h3>
+
+        <p>
+
+            ${project.deliverable}
+
+        </p>
+
+    </section>
+
+    <section class="case-section">
+
+        <h3>
+
+            Summary
+
+        </h3>
+
+        <p>
+
+            ${project.summary}
+
+        </p>
+
+    </section>
+
+    <section class="case-section">
+
+        <h3>
+
+            Tools
+
+        </h3>
+
+        <div class="tool-tags">
+
+            ${createTags(project.tools)}
+
+        </div>
+
+    </section>
+
+    <section class="case-section">
+
+        <h3>
+
+            Core Skills
+
+        </h3>
+
+        <div class="tool-tags">
+
+            ${createTags(project.skills)}
+
+        </div>
+
+    </section>
 
 </div>
 
