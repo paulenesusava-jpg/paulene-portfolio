@@ -86,10 +86,7 @@ img { display: block; max-width: 100%; }
   font-weight: 600;
   letter-spacing: .03em;
 }
-.tool-tags { display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:10px;}
+.tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* ===== EYEBROW ===== */
 .eyebrow {
@@ -209,17 +206,17 @@ img { display: block; max-width: 100%; }
 
 /* ===== HERO ===== */
 .hero {
-    padding: 120px 0 80px;
-  min-height: 85vh;
+  padding-top: 80px;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: start;   /* was center */
+  align-items: center;
   gap: 0;
   overflow: hidden;
 }
 
 .hero-content {
-  padding:40px 64px 50px min(6vw,80px);
+  padding: 80px 64px 80px min(6vw, 80px);
 }
 
 .hero-eyebrow {
@@ -271,7 +268,7 @@ img { display: block; max-width: 100%; }
   color: var(--clr-muted);
   line-height: 1.85;
   max-width: 420px;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
 }
 .hero-description strong { color: var(--clr-primary); }
 
@@ -279,7 +276,7 @@ img { display: block; max-width: 100%; }
 
 .hero-image-panel {
   position: relative;
-  height: 75vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -477,7 +474,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
 /* ===== CAPABILITIES ===== */
 #capabilities { background: var(--clr-primary); }
 #capabilities section { padding: 0; }
-#capabilities .container { padding: 807px 0; }
+#capabilities .container { padding: 110px 0; }
 #capabilities .section-header { margin-bottom: 64px; }
 #capabilities .eyebrow { color: var(--clr-accent); }
 #capabilities .section-title { color: #fff; }
@@ -595,7 +592,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   font-size: 1.1rem;
 }
 .pd-card-header h3 {
-  font-size: 2.0rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
@@ -866,23 +863,21 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
 #modal-body { padding: 28px 36px; }
 
 .case-study h2 { font-size: 1.7rem; margin: 8px 0 4px; }
-.case-study .case-subtitle { color: var(--clr-muted); margin-bottom: 10px; }
+.case-study .case-subtitle { color: var(--clr-muted); margin-bottom: 20px; }
 
-.gallery-viewer {border-radius:18px;
-    overflow:hidden;
-    background:#f6f6f6;
-    border:1px solid var(--clr-border);
+.gallery-viewer {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: var(--clr-bg-alt);
 }
-.case-study-image { display:block;
-    width:100%;
-    height:auto;      /* remove fixed height */
-    object-fit:contain;}
+.case-study-image { width: 100%; height: 300px; object-fit: cover; }
 
-.gallery-thumbnails {display:flex;
-    gap:10px;
-    margin-top:24px;
-    margin-bottom:24px;
-    flex-wrap:wrap;
+.gallery-thumbnails {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .gallery-thumb {
   width: 70px;
@@ -899,16 +894,16 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   opacity: 1;
 }
 
-.case-section { margin-bottom: 10px; }
+.case-section { margin-bottom: 16px; }
 .case-section h3 {
   font-size: .75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .12em;
   color: var(--clr-accent);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
-.case-section p { font-size: .88rem; color: var(--clr-muted);margin-bottom:8px; line-height: 1.65; }
+.case-section p { font-size: .88rem; color: var(--clr-muted); line-height: 1.7; }
 
 .certificate-gallery {
   display: grid;
@@ -1017,7 +1012,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   <div class="hero-content">
     <div class="hero-eyebrow">Real Estate Professional</div>
     <h1 class="hero-name">Paulene Susa</h1>
-    <p class="hero-title">Real Estate Operations &amp; Transaction Support Specialist</p>
+    <p class="hero-title">Real Estate Operations &amp;<br>Transaction Support Specialist</p>
     <div class="hero-divider"></div>
     <p class="hero-description">
       I help real estate teams and brokers streamline operations,
@@ -1077,7 +1072,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
         <div class="contact-items">
           <div class="contact-item">
             <div class="contact-item-icon">✉</div>
-            <a href="mailto:paulenesusava@gmail.com">paulenesusava@gmail.com</a>
+            <a href="mailto:paulene.susa@gmail.com">paulene.susa@gmail.com</a>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📍</div>
@@ -1085,7 +1080,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">in</div>
-            <a href="https://linkedin.com/in/paulenesusava" target="_blank">linkedin.com/in/paulenesusava</a>
+            <a href="https://linkedin.com/in/paulene.susa" target="_blank">linkedin.com/in/paulene.susa</a>
           </div>
         </div>
         <a href="Assets/Paulene-Susa-Resume.pdf" download="Paulene-Susa-Resume.pdf" class="btn btn-accent">Download Résumé ↓</a>
