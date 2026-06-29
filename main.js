@@ -129,9 +129,9 @@ US Real Estate Online Masterclass
 
 <div class="certificate-gallery">
 
-<img src="assets/Sync2VA Certificate 1.png" alt="Certificate 1">
+<img src="Assets/Sync2VA Certificate 1.png" alt="Certificate 1">
 
-<img src="assets/Sync2VA Certificate 2.png" alt="Certificate 2">
+<img src="Assets/Sync2VA Certificate 2.png" alt="Certificate 2">
 
 </div>
 
