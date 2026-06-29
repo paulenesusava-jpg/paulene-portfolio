@@ -116,7 +116,7 @@ const portfolio = {
 
             categoryLabel: "Property Research",
 
-            image: "assets/Property Search 1.png",
+            image: "Assets/Property Search 1.png",
 
             gallery: [
                 "Assets/Property Search 1.png",
