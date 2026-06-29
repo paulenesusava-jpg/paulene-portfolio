@@ -9,13 +9,19 @@ document.addEventListener("DOMContentLoaded", initializePortfolio);
 function initializePortfolio() {
 
     renderFeaturedWork();
+
     renderCapabilities();
+
     renderProfessionalDevelopment();
 
+    renderAbout();
+
     initializeCaseStudyModal();
+
     initializeCertificateButton();
 
 }
+
 
 /* ==================================================
    CASE STUDY MODAL

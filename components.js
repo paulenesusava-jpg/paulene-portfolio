@@ -649,7 +649,7 @@ function renderCaseStudy(project) {
 
     </div>
 
-    <section class="case-section">
+    <div class="case-section">
 
         <h3>
 
@@ -663,9 +663,9 @@ function renderCaseStudy(project) {
 
         </p>
 
-    </section>
+    </div>
 
-    <section class="case-section">
+    <div class="case-section">
 
         <h3>
 
@@ -679,9 +679,9 @@ function renderCaseStudy(project) {
 
         </p>
 
-    </section>
+    </div>
 
-    <section class="case-section">
+   <div class="case-section">
 
         <h3>
 
@@ -695,9 +695,9 @@ function renderCaseStudy(project) {
 
         </p>
 
-    </section>
+    </div>
 
-    <section class="case-section">
+    <div class="case-section">
 
         <h3>
 
@@ -711,9 +711,9 @@ function renderCaseStudy(project) {
 
         </div>
 
-    </section>
+    </div>
 
-    <section class="case-section">
+    <div class="case-section">
 
         <h3>
 
@@ -727,10 +727,12 @@ function renderCaseStudy(project) {
 
         </div>
 
-    </section>
+    </div>
 
 </div>
 
 `;
 
 }
+
+function renderAbout(){const section=document.getElementById('about');if(!section)return;section.innerHTML=`<section class="container"><div class="section-header"><p class="eyebrow">ABOUT ME</p><h2 class="section-title">Helping Real Estate Professionals Stay Organized and Focused on Growth</h2></div><div class="about-grid"><div class="about-summary"><h3>Paulene Susa</h3><p class="about-location">Dubai, UAE</p><div class="tool-tags"><span class="tag">Organization</span><span class="tag">Reliability</span><span class="tag">Continuous Learning</span><span class="tag">Client Service</span><span class="tag">Attention to Details</span><span class="tag">Efficiency</span></div></div><div class="about-content"><p>Hi, I'm <strong>Paulene Susa</strong>, a Real Estate Operations & Transaction Support Specialist based in Dubai, UAE.</p><p>My hospitality background strengthened my attention to details, organization and client services, which I now apply to real estate operations.</p><p>I enjoy supporting professionals behind the scenes so they can focus on serving clients and growing their business.</p></div></div></section>`;}
