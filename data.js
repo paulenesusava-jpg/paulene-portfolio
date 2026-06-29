@@ -119,13 +119,13 @@ const portfolio = {
             image: "assets/Property Search 1.png",
 
             gallery: [
-                "assets/Property Search 1.png",
-                "assets/Property Search 2.png",
-                "assets/Property Search 3.png",
-                "assets/Property Search 4.png",
-                "assets/Property Search 5.png",
-                "assets/Property Search 6.png",
-                "assets/Property Search 7.png"
+                "Assets/Property Search 1.png",
+                "Assets/Property Search 2.png",
+                "Assets/Property Search 3.png",
+                "Assets/Property Search 4.png",
+                "Assets/Property Search 5.png",
+                "Assets/Property Search 6.png",
+                "Assets/Property Search 7.png"
             ],
 
             summary:
@@ -165,10 +165,10 @@ const portfolio = {
 
             categoryLabel: "Property Research",
 
-            image: "assets/Comparative Market Analysis.png",
+            image: "Assets/Comparative Market Analysis.png",
 
             gallery: [
-                "assets/Comparative Market Analysis.png"
+                "Assets/Comparative Market Analysis.png"
             ],
 
             summary:
@@ -205,10 +205,10 @@ const portfolio = {
 
             categoryLabel: "Transaction Coordination",
 
-            image: "assets/Listing Coordinator Checklist.png",
+            image: "Assets/Listing Coordinator Checklist.png",
 
             gallery: [
-                "assets/Listing Coordinator Checklist.png"
+                "Assets/Listing Coordinator Checklist.png"
             ],
 
             summary:
@@ -244,10 +244,10 @@ const portfolio = {
 
             categoryLabel: "Transaction Coordination",
 
-            image: "assets/Buyer's Agent VA checklist.png",
+            image: "Assets/Buyer's Agent VA checklist.png",
 
             gallery: [
-                "assets/Buyer's Agent VA checklist.png"
+                "Assets/Buyer's Agent VA checklist.png"
             ],
 
             summary:
@@ -283,10 +283,10 @@ const portfolio = {
 
             categoryLabel: "Property Management",
 
-            image: "assets/Tenant Background Report.png",
+            image: "Assets/Tenant Background Report.png",
 
             gallery: [
-                "assets/Tenant Background Report.png"
+                "Assets/Tenant Background Report.png"
             ],
 
             summary:
@@ -323,10 +323,10 @@ const portfolio = {
 
             categoryLabel: "Property Management",
 
-            image: "assets/Sample Accounting Activity.png",
+            image: "Assets/Sample Accounting Activity.png",
 
             gallery: [
-                "assets/Sample Accounting Activity.png"
+                "Assets/Sample Accounting Activity.png"
             ],
 
             summary:
@@ -364,10 +364,10 @@ const portfolio = {
 
             categoryLabel: "Marketing",
 
-            image: "assets/Open House Poster.png",
+            image: "Assets/Open House Poster.png",
 
             gallery: [
-                "assets/Open House Poster.png"
+                "Assets/Open House Poster.png"
             ],
 
             summary:
