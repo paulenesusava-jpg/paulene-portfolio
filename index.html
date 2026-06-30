@@ -871,7 +871,11 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   margin-bottom: 10px;
   background: var(--clr-bg-alt);
 }
-.case-study-image { width: 100%; height: 300px; object-fit: cover; }
+.case-study-image { width: 100%;
+    height: 480px;
+    object-fit: contain;
+    background: #f6f6f6;
+    border-radius: 12px;}
 
 .gallery-thumbnails {
   display: flex;
