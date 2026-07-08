@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paulene Susa — Real Estate Operations Specialist</title>
+<title>Paulene Susa — Real Estate Transaction Coordinator & VA</title>
+<meta name="description" content="California-focused Real Estate Transaction Coordinator & Virtual Assistant for US agents and brokers. Buyer & seller transaction management, disclosure compliance, listing coordination, and property research. Sync2VA-certified.">
+<meta property="og:title" content="Paulene Susa — Real Estate Transaction Coordinator & VA">
+<meta property="og:description" content="California-focused Real Estate Transaction Coordinator & Virtual Assistant for US agents and brokers. Buyer & seller transaction management, disclosure compliance, and listing coordination.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paulenesusava-jpg.github.io/paulene-portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paulene Susa — Real Estate Transaction Coordinator & VA">
+<meta name="twitter:description" content="California-focused Real Estate Transaction Coordinator & Virtual Assistant for US agents and brokers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -279,8 +287,26 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: end;
   margin-right: 60px;
-  background: var(--clr-bg-alt)
-  
+  background: var(--clr-bg-alt);
+  overflow: hidden;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 0;
+}
+
+.hero-image-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,20,30,0.05) 0%, rgba(20,20,30,0.15) 70%, rgba(20,20,30,0.35) 100%);
+  z-index: 1;
 }
 
 .hero-image-panel::before { display: none; }
@@ -761,6 +787,13 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   color: #fff;
   margin: 0 auto 20px;
 }
+
+.contact-card-photo {
+  object-fit: cover;
+  object-position: top center;
+  width: 96px;
+  height: 96px;
+}
 .contact-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 4px; }
 .contact-card p { font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 24px; }
 .contact-availability {
@@ -1028,6 +1061,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
     </div>
   </div>
   <div class="hero-image-panel">
+    <img src="Assets/pau-headshot-hero.jpg" alt="Paulene Susa, Real Estate Transaction Coordinator & Virtual Assistant" class="hero-photo">
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-number">9+</div>
@@ -1035,7 +1069,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
       </div>
       <div class="stat-item">
         <div class="stat-number">8</div>
-        <div class="stat-label">Featured Work</div>
+        <div class="stat-label">Portfolio Projects</div>
       </div>
       <div class="stat-item">
         <div class="stat-number">2</div>
@@ -1090,15 +1124,13 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
       </div>
       <div class="contact-visual">
         <div class="contact-card">
-          <div class="contact-card-monogram">PS</div>
+          <img src="Assets/pau-headshot-square.jpg" alt="Paulene Susa" class="contact-card-monogram contact-card-photo">
           <h3>Paulene Susa</h3>
-          <p>Real Estate Operations &amp; Transaction Support Specialist</p>
+          <p>Real Estate Transaction Coordinator &amp; Virtual Assistant</p>
           <div class="contact-availability">
             <span class="dot-green"></span>
             Available for new opportunities
           </div>
-          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&auto=format&fit=crop&q=60"
-               alt="Notebook" style="width:100%;border-radius:12px;object-fit:cover;height:160px;">
         </div>
       </div>
     </div>

@@ -99,14 +99,57 @@ const portfolio = {
 
 ],
 
-    featuredProject: "west-virginia",
+    featuredProject: "california-tc-workflow",
 
     projects: [
 
         {
-            id: "west-virginia",
+            id: "california-tc-workflow",
 
             featured: true,
+
+            title: "California Transaction Coordination System",
+
+            subtitle: "End-to-End Buyer & Seller Workflow, Built in 3 Formats",
+
+            category: "transaction-coordination",
+
+            categoryLabel: "Transaction Coordination",
+
+            image: "Assets/PLACEHOLDER-ca-tc-system.png",
+
+            gallery: [
+                "Assets/PLACEHOLDER-ca-tc-system.png"
+            ],
+
+            summary:
+                "Built a complete California transaction coordination system covering all five phases of buyer and seller transactions, from a 9-folder digital filing structure to the state's key disclosure documents (TDS, SPQ, NHD, AVID, FIRPTA, Form 593). Delivered the same workflow in three formats so agents and brokers can adopt it inside whatever system they already use: an interactive HTML tracker, a five-sheet Excel workbook with conditional formatting and dropdown validation, and Notion-ready CSV templates.",
+
+            outcome:
+                "The Excel workbook auto-calculates every contingency deadline directly from California's statutory timelines, removing manual date tracking and reducing the risk of a missed disclosure or contingency deadline across a transaction.",
+
+            deliverable:
+                "California TC Workflow System (HTML + Excel + Notion)",
+
+            tools: [
+                "Microsoft Excel",
+                "Notion",
+                "HTML/CSS/JS"
+            ],
+
+            skills: [
+                "California Transaction Coordination",
+                "Disclosure Compliance",
+                "Contingency Deadline Tracking",
+                "Digital Filing Systems",
+                "Workflow Design"
+            ]
+        },
+
+        {
+            id: "west-virginia",
+
+            featured: false,
 
             title: "Investment Property Research",
 
