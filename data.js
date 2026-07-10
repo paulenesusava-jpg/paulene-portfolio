@@ -110,31 +110,33 @@ const portfolio = {
 
             title: "California Transaction Coordination System",
 
-            subtitle: "End-to-End Buyer & Seller Workflow, Built in 3 Formats",
+            subtitle: "End-to-End Buyer & Seller Workflow, Built in 2 Formats",
 
             category: "transaction-coordination",
 
             categoryLabel: "Transaction Coordination",
 
-            image: "Assets/PLACEHOLDER-ca-tc-system.png",
+            image: "Assets/ca-tc-deadline-tracker.png",
 
             gallery: [
-                "Assets/PLACEHOLDER-ca-tc-system.png"
+                "Assets/ca-tc-deadline-tracker.png",
+                "Assets/ca-tc-overview.png",
+                "Assets/ca-tc-buyer-docs.png",
+                "Assets/notion-deadline-tracker.png"
             ],
 
             summary:
-                "Built a complete California transaction coordination system covering all five phases of buyer and seller transactions, from a 9-folder digital filing structure to the state's key disclosure documents (TDS, SPQ, NHD, AVID, FIRPTA, Form 593). Delivered the same workflow in three formats so agents and brokers can adopt it inside whatever system they already use: an interactive HTML tracker, a five-sheet Excel workbook with conditional formatting and dropdown validation, and Notion-ready CSV templates.",
+                "Built a complete California transaction coordination system covering all five phases of buyer and seller transactions, from a 9-folder digital filing structure to the state's key disclosure documents (TDS, SPQ, NHD, AVID, FIRPTA, Form 593). Delivered the same workflow in two formats so agents and brokers can adopt it inside whatever system they already use: a five-sheet Excel workbook with conditional formatting and dropdown validation, and a Notion-ready template covering the deadline tracker, buyer and seller document folders, and contact CRM.",
 
             outcome:
                 "The Excel workbook auto-calculates every contingency deadline directly from California's statutory timelines, removing manual date tracking and reducing the risk of a missed disclosure or contingency deadline across a transaction.",
 
             deliverable:
-                "California TC Workflow System (HTML + Excel + Notion)",
+                "California TC Workflow System (Excel + Notion)",
 
             tools: [
                 "Microsoft Excel",
-                "Notion",
-                "HTML/CSS/JS"
+                "Notion"
             ],
 
             skills: [

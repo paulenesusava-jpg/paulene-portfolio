@@ -45,7 +45,10 @@ body {
   color: var(--clr-text);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+  padding-top: 80px;
 }
+
+section[id] { scroll-margin-top: 80px; }
 
 h1, h2, h3, h4 {
   font-family: 'Cormorant Garamond', serif;
@@ -280,70 +283,61 @@ img { display: block; max-width: 100%; }
 
 .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 
-.hero-image-panel {
-  position: relative;
-  height: 100vh;
+.hero-capabilities {
   display: flex;
-  align-items: center;
-  justify-content: end;
-  margin-right: 60px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.hero-cap-tag {
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: var(--clr-primary);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  padding: 8px 16px;
+  border-radius: 100px;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.hero-cap-tag:hover {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
   background: var(--clr-bg-alt);
-  overflow: hidden;
 }
 
-.hero-photo {
+.hero-image-panel {
+  position: relative;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px;
+}
+
+.hero-image-panel::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  width: min(360px, 70%);
+  aspect-ratio: 1 / 1;
+  background: var(--clr-accent);
+  opacity: 0.12;
+  border-radius: 40px;
+  transform: rotate(8deg) translate(18px, 18px);
   z-index: 0;
 }
 
-.hero-image-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(20,20,30,0.05) 0%, rgba(20,20,30,0.15) 70%, rgba(20,20,30,0.35) 100%);
+.hero-photo {
+  position: relative;
+  width: min(340px, 65%);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 40px;
+  box-shadow: var(--shadow);
   z-index: 1;
 }
 
-.hero-image-panel::before { display: none; }
-
-/* Stats card */
-.hero-stats {
-  position: relative;
-  bottom: auto;
-  right: auto;
-  width: 280px;
-  background: var(--clr-white);
-  border: 1px solid var(--clr-border);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  z-index: 2;
-  overflow: hidden;
-}
-
-.stat-item {
-  padding: 22px 28px;
-  border-bottom: 1px solid var(--clr-border);
-}
-.stat-item:last-child { border-bottom: none; }
-
-.stat-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--clr-accent);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.stat-label {
-  font-size: .78rem;
-  color: var(--clr-muted);
-  font-weight: 500;
-}
 /* hide old icon/sub elements */
 .stat-icon { display: none; }
 .stat-sub { display: none; }
@@ -895,6 +889,110 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
 
 #modal-body { padding: 24px 36px; }
 
+/* ===== RESUME GATE MODAL ===== */
+#resume-gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18,38,63,.7);
+  backdrop-filter: blur(6px);
+  z-index: 2100;
+  display: none;
+}
+#resume-gate-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2101;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+#resume-gate-modal.open, #resume-gate-overlay.open { display: flex; }
+#resume-gate-overlay.open { display: block; }
+
+.gate-container {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 32px 32px;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,.25);
+  text-align: center;
+}
+.gate-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--clr-text);
+}
+.gate-close:hover { background: var(--clr-bg-alt); }
+.gate-icon { font-size: 2rem; margin-bottom: 10px; }
+.gate-container h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--clr-primary);
+  margin-bottom: 8px;
+}
+.gate-container p {
+  font-size: .88rem;
+  color: var(--clr-muted);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.gate-field {
+  text-align: left;
+  margin-bottom: 14px;
+}
+.gate-field label {
+  display: block;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: 6px;
+}
+.gate-field input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: .92rem;
+  color: var(--clr-text);
+  background: var(--clr-bg-alt);
+}
+.gate-field input:focus { outline: 2px solid var(--clr-accent); outline-offset: 1px; }
+.gate-submit {
+  width: 100%;
+  margin-top: 6px;
+}
+.gate-error {
+  color: #b3261e;
+  font-size: .78rem;
+  margin-top: 8px;
+  display: none;
+}
+.gate-error.visible { display: block; }
+.gate-success { display: none; }
+.gate-success.visible { display: block; }
+.gate-success .gate-icon { color: var(--clr-accent); }
+.gate-disclaimer {
+  font-size: .68rem;
+  color: var(--clr-muted);
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
 .case-study h2 { font-size: 1.7rem; margin: 8px 0 4px; }
 .case-study .case-subtitle { color: var(--clr-muted); margin-bottom: 20px; }
 
@@ -990,9 +1088,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
 
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-image-panel { height: 420px; }
   .hero-content { padding: 48px 24px; }
-  .hero-stats { grid-template-columns: repeat(2,1fr); }
   .capabilities-grid { grid-template-columns: repeat(2,1fr); }
   .pd-section-layout { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; }
@@ -1006,7 +1102,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   .professional-development-grid { grid-template-columns: 1fr; }
   .training-card .pd-card-body { grid-template-columns: 1fr; }
   .nav-links { display: none; }
-  .hero-stats { grid-template-columns: repeat(2,1fr); bottom: 20px; right: 20px; left: 20px; }
+  .hero-image-panel { margin: 0 auto; padding: 20px 0; }
   #modal-body { padding: 28px 24px; }
 }
 
@@ -1035,7 +1131,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="Assets/Paulene-Susa-Resume.pdf" download="Paulene-Susa-Resume.pdf" class="btn btn-primary" style="font-size:.8rem;padding:11px 22px;">
+      <a href="#" onclick="openResumeGate(event)" class="btn btn-primary" style="font-size:.8rem;padding:11px 22px;">
         View Résumé ↓
       </a>
     </div>
@@ -1055,31 +1151,19 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
       manage transactions, and <strong>deliver exceptional client
       experiences</strong> with accuracy, efficiency, and care.
     </p>
+    <div class="hero-capabilities">
+      <a href="#capabilities" class="hero-cap-tag">Transaction Coordination</a>
+      <a href="#capabilities" class="hero-cap-tag">Property Research</a>
+      <a href="#capabilities" class="hero-cap-tag">Property Management</a>
+      <a href="#capabilities" class="hero-cap-tag">Marketing &amp; Admin Support</a>
+    </div>
     <div class="hero-actions">
       <a href="#featured-work" class="btn btn-primary">View My Work →</a>
-      <a href="Assets/Paulene-Susa-Resume.pdf" download="Paulene-Susa-Resume.pdf" class="btn btn-outline">Download Résumé ↓</a>
+      <a href="#" onclick="openResumeGate(event)" class="btn btn-outline">Download Résumé ↓</a>
     </div>
   </div>
   <div class="hero-image-panel">
     <img src="Assets/pau-headshot-hero.jpg" alt="Paulene Susa, Real Estate Transaction Coordinator & Virtual Assistant" class="hero-photo">
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-number">9+</div>
-        <div class="stat-label">Years of Professional Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">8</div>
-        <div class="stat-label">Portfolio Projects</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Relevant Trainings</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Remote Ready</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1120,7 +1204,7 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
             <a href="https://linkedin.com/in/paulenesusava" target="_blank">linkedin.com/in/paulenesusava</a>
           </div>
         </div>
-        <a href="Assets/Paulene-Susa-Resume.pdf" download="Paulene-Susa-Resume.pdf" class="btn btn-accent">Download Résumé ↓</a>
+        <a href="#" onclick="openResumeGate(event)" class="btn btn-accent">Download Résumé ↓</a>
       </div>
       <div class="contact-visual">
         <div class="contact-card">
@@ -1161,6 +1245,40 @@ section:nth-child(even) { background: var(--clr-bg-alt); }
   </div>
 </div>
 
+<!-- RESUME EMAIL-GATE MODAL -->
+<div id="resume-gate-overlay" onclick="closeResumeGate()"></div>
+<div id="resume-gate-modal">
+  <div class="gate-container">
+    <button class="gate-close" aria-label="Close" onclick="closeResumeGate()">✕</button>
+
+    <div id="gate-form-state">
+      <div class="gate-icon">📄</div>
+      <h3>Get My Résumé</h3>
+      <p>Enter your email and I'll send the résumé right over — this also lets me know who's interested so I can follow up.</p>
+      <form id="resume-gate-form" onsubmit="handleResumeGateSubmit(event)">
+        <div class="gate-field">
+          <label for="gate-name">Name</label>
+          <input type="text" id="gate-name" name="name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="gate-field">
+          <label for="gate-email">Email *</label>
+          <input type="email" id="gate-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary gate-submit" id="gate-submit-btn">View Résumé →</button>
+        <div class="gate-error" id="gate-error">Something went wrong — please try again, or email me directly.</div>
+      </form>
+      <div class="gate-disclaimer">Your email is used only to send you this résumé and follow up about opportunities. No spam, ever.</div>
+    </div>
+
+    <div id="gate-success-state" class="gate-success">
+      <div class="gate-icon">✅</div>
+      <h3>Thank You!</h3>
+      <p>Your résumé is opening in a new tab. I'll also follow up by email shortly.</p>
+      <a href="Assets/Paulene-Susa-Resume.pdf" target="_blank" class="btn btn-primary gate-submit">Open Résumé Again</a>
+    </div>
+  </div>
+</div>
+
 <script src="data.js"></script>
 <script src="components.js"></script>
 <script src="animations.js"></script>
@@ -1188,6 +1306,83 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// ===== RESUME EMAIL-GATE =====
+// IMPORTANT (Pau): replace this with your own Formspree endpoint before going live.
+// 1. Create a free account at https://formspree.io
+// 2. Create a new form, copy its endpoint (looks like https://formspree.io/f/xxxxxxx)
+// 3. Paste it below in place of the placeholder.
+const RESUME_GATE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const RESUME_PATH = 'Assets/Paulene-Susa-Resume.pdf';
+
+function openResumeGate(e) {
+  if (e) e.preventDefault();
+  document.getElementById('resume-gate-overlay').classList.add('open');
+  document.getElementById('resume-gate-modal').classList.add('open');
+  document.getElementById('gate-form-state').style.display = 'block';
+  document.getElementById('gate-success-state').classList.remove('visible');
+  document.getElementById('gate-error').classList.remove('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeResumeGate() {
+  document.getElementById('resume-gate-overlay').classList.remove('open');
+  document.getElementById('resume-gate-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function handleResumeGateSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('gate-submit-btn');
+  const errorEl = document.getElementById('gate-error');
+  const name = document.getElementById('gate-name').value.trim();
+  const email = document.getElementById('gate-email').value.trim();
+
+  errorEl.classList.remove('visible');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const showSuccessAndOpenResume = () => {
+    document.getElementById('gate-form-state').style.display = 'none';
+    document.getElementById('gate-success-state').classList.add('visible');
+    window.open(RESUME_PATH, '_blank');
+  };
+
+  // If the endpoint hasn't been configured yet, don't block a real visitor —
+  // just let them through and warn in the console so Pau notices during testing.
+  if (RESUME_GATE_ENDPOINT.includes('YOUR_FORM_ID')) {
+    console.warn('Resume gate: Formspree endpoint not configured yet. See RESUME_GATE_ENDPOINT in index.html.');
+    showSuccessAndOpenResume();
+    btn.disabled = false;
+    btn.textContent = 'View Résumé →';
+    return;
+  }
+
+  try {
+    const res = await fetch(RESUME_GATE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name || '(not provided)',
+        email: email,
+        message: `New résumé request from the portfolio site.`,
+        page: window.location.href,
+        _subject: `Résumé request from ${name || email}`
+      })
+    });
+
+    if (res.ok) {
+      showSuccessAndOpenResume();
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (err) {
+    errorEl.classList.add('visible');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'View Résumé →';
+  }
+}
 
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id], div[id]');
